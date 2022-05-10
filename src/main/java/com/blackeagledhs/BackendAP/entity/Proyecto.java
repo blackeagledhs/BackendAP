@@ -31,6 +31,7 @@ public class Proyecto {
     private Long id;
     private String nombreproyecto;
     private String descripcion;
+    private String enlace;
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "persona_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
@@ -40,12 +41,15 @@ public class Proyecto {
     public Proyecto() {
     }
 
-    public Proyecto(Long id, String nombreproyecto, String descripcion, Persona persona) {
+    public Proyecto(Long id, String nombreproyecto, String descripcion, String enlace, Persona persona) {
         this.id = id;
         this.nombreproyecto = nombreproyecto;
         this.descripcion = descripcion;
+        this.enlace = enlace;
         this.persona = persona;
     }
+
+    
     
     
 }
